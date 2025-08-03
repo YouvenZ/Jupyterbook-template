@@ -52,4 +52,201 @@ If you have a markdown file and you'd like to quickly add YAML metadata to it, s
 jupyter-book myst init path/to/markdownfile.md
 ```
 
+## Block Directives
+
+```{note}
+This is a note admonition. Use it to highlight important information!
+```
+
+```{warning}
+This is a warning. Use it to alert users about potential issues.
+```
+
+```{tip}
+Pro tip: MyST directives make your content more engaging and organized!
+```
+
+## Code Blocks and Syntax Highlighting 
+
+### Basic Code Blocks
+
+```python
+def hello_world():
+    """A simple Python function."""
+    print("Hello, Jupyter Book!")
+    return "Welcome to the tutorial!"
+
+# Call the function
+result = hello_world()
+```
+
+### Code with Line Numbers
+
+```{code-block} python
+:linenos:
+:emphasize-lines: 2, 4
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Create plot
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2)
+plt.title('Sine Wave Example')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.grid(True)
+plt.show()
+```
+
+### Multiple Language Examples
+
+**JavaScript:**
+```javascript
+function createChart(data) {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    return new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Sample Chart'
+            }
+        }
+    });
+}
+```
+
+**SQL:**
+```sql
+SELECT 
+    student_id,
+    student_name,
+    AVG(grade) as average_grade
+FROM students s
+JOIN grades g ON s.id = g.student_id
+WHERE semester = '2024-Fall'
+GROUP BY student_id, student_name
+HAVING AVG(grade) > 85
+ORDER BY average_grade DESC;
+```
+
+## Mathematical Expressions 
+### Inline Math
+The quadratic formula is {math}`x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}`.
+
+### Block Math Equations
+:ref:Equations
+
+```{math}
+:label: quadratic-formula
+
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+```
+
+```{math}
+:label: euler-identity
+
+e^{i\pi} + 1 = 0
+```
+
+### Complex Mathematical Expressions
+
+```{math}
+\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &= \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &= 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &= \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &= 0
+\end{align}
+```
+
+## Admonitions and Callouts 
+```{attention}
+Pay attention to this important information!
+```
+
+```{caution}
+Be careful when implementing this approach.
+```
+
+```{danger}
+This operation can be dangerous if not done correctly.
+```
+
+```{error}
+This shows an error message format.
+```
+
+```{hint}
+Here's a helpful hint for better understanding.
+```
+
+```{important}
+This information is crucial for success.
+```
+
+```{note}
+Additional notes and context go here.
+```
+
+```{seealso}
+See also: Related topics and references.
+```
+
+```{tip}
+Useful tips and best practices.
+```
+
+```{warning}
+Warning about potential issues.
+```
+
+### Custom Admonitions
+
+```{admonition} Custom Title
+:class: dropdown
+
+This is a custom admonition with a dropdown feature.
+You can click to expand/collapse this content.
+```
+
+## Cross-References and Links 
+
+### Internal References
+- Reference to equation: {eq}`quadratic-formula`
+
+### External Links
+- [Jupyter Book Documentation](https://jupyterbook.org/)
+- [MyST Parser](https://myst-parser.readthedocs.io/)
+
+
+## Images and Media 
+### Basic Image Inclusion
+
+```{figure} logo.png
+:alt: Alternative text
+:width: 500px
+:align: center
+
+Caption for your image goes here.
+```
+
+### Images with Custom Sizing
+
+```{image} logo.png
+:alt: Description
+:class: shadow
+:width: 300px
+:height: 200px
+```
+
+
+
 
